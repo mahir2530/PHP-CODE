@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <form action="11.php" method="POST">
+    <form action="9(php).php" method="POST">
         Enter name :<input type="text" name="name"><br>
         <b>gender</b>
         <input type="radio" name="gender" value="male">MAle
