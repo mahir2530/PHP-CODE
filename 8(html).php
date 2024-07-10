@@ -4,7 +4,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="9.php" method="POST">
+    <form action="8(php).php" method="POST">
         <fieldset>
             <legend>shubh</legend>
         <table border="2">
