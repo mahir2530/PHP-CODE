@@ -15,7 +15,7 @@ $s1 = new student();
 $s2 = new student();
 
 $s1->set_name('tirth');
-$s2->set_name('dhruv');
+$s2->set_name('Chaman');
 
 echo "Student 1 : <br>";
 echo "name 1 : " . $s1->get_name() . "<br>";
