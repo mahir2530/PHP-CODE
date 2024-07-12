@@ -16,15 +16,16 @@
     <?php
     class Sum
     {
-        public $num1, $num2;
+        public $num1;
+        public $num2;
 
-        function __construct($num1, $num2)
+        public function set_Value($num1, $num2)
         {
             $this->num1 = $num1;
             $this->num2 = $num2;
         }
 
-        function show()
+        public function show()
         {
             $sum = $this->num1 + $this->num2;
             echo "Sum of two numbers $this->num1 & $this->num2 is: $sum";
@@ -35,8 +36,10 @@
         $num1 = $_POST['num1'];
         $num2 = $_POST['num2'];
 
-        $n = new Sum($num1, $num2);
-        $n->show();
+            $n = new Sum();
+            $n->set_Value($num1, $num2);
+            $n->show();
+    
     }
     ?>
 </body>
