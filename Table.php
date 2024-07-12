@@ -6,17 +6,17 @@
 	<title>STORE</title>
 </head>
 <body>
-	<form method="GET">
+	<form method="POST">
 		Enter name: <input type="text" name="NAME"><br>
-		Enter Roll_no: <input type="text" name="Roll_no"><br>
-		Enter Email: <input type="text" name="Email"><br>
+		Enter Roll_no: <input type="number" name="Roll_no"><br>
+		Enter Email: <input type="email" name="Email"><br>
 		<input type="submit" name="Submit" value="Submit">
 	</form>
 	<?php
-		if (isset($GET['Submit'])) {
-			$NAME = $GET['NAME'];
-			$ROLL_NO = $GET['Roll_no'];
-			$Email = $GET['Email'];
+		if (isset($_POST['Submit'])) {
+			$NAME = $_POST['NAME'];
+			$ROLL_NO = $_POST['Roll_no'];
+			$Email = $_POST['Email'];
 
 			echo "<table border='1'>
 				<tr>
