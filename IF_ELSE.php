@@ -1,3 +1,5 @@
+#If the numbers are the same, it will multiply their sum by 3; otherwise, it will simply add the two numbers.
+
 <!DOCTYPE html>
 <html lang="en">
 
