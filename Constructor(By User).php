@@ -7,14 +7,13 @@
 </head>
 <body>
 <form method="post" >
-     <label for="fruit_name">Enter name:</label>
-    <input type="text" id="fruit_name" name="fruit_name" required>
+    Enter Name : <input type="text" name="name" required>
     <br><br>
     <input type="submit" value="Submit">
 </form>
 <?php
 // Define the Fruits class
-class Fruits {
+class name {
     public $name;
     
 
@@ -32,9 +31,9 @@ class Fruits {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
    
-    $fruit_name = $_POST['fruit_name'];
+    $fruit_name = $_POST['name'];
 
-    $obj = new Fruits($fruit_name);
+    $obj = new name($fruit_name);
     
     echo "<h2>Fruit Details</h2>";
     echo "<p>The  name  is : " . $obj->get_name() . "</p>";
