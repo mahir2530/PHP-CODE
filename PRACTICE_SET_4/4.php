@@ -10,8 +10,8 @@ $Books = [
 
 echo "<h2>Initial Movie Ratings:</h2>";
 echo "<ul>";
-foreach ($Books as $movie => $rating) {
-    echo "<li>$movie: $rating</li>";
+foreach ($Books as $Book => $rating) {
+    echo "<li>$Book: $rating</li>";
 }
 echo "</ul>";
 
