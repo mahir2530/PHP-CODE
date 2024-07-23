@@ -1,6 +1,5 @@
 <?php
 
-// Initialize an associative array to store movie ratings
 $Books = [
     "Where the Crawdads Sing" => 9,
     "Becoming" => 8,
