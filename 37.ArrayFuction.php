@@ -48,10 +48,63 @@ echo "<br>" . "After pop : <br>";
 print_r($array); // Outputs: Array ( [0] => red [1] => green [2] => yellow )
 
 echo "<br>" . "=======| SHUFFLE |===============================================================" . "<br>";
-$array = array(1, 2, 3, 4, 5);
+$array = array(1, 2, 3, 4, 5, 1);
 shuffle($array);
 print_r($array); // Outputs: Array ( [0] => 3 [1] => 1 [2] => 4 [3] => 5 [4] => 2 ) // Random order
 
+echo "<br>" . "=======| SEARCH |===============================================================" . "<br>";
+$array = array(1, 2, 3, 4, 5);
+$key = array_search(2, $array);
+if ($key !== false) {
+    echo "Found value 2 at index: " . $key . "<br>";
+} else {
+    echo "Value 2 not found in array";
+}
+print_r($array);
+
+echo "<br>" . "=======| UNIQUE |===============================================================" . "<br>";
+$array = array(1, 2, 3, 4, 5, 5);
+shuffle($array);
+$array = array_unique($array);
+print_r($array);
+
+echo "<br>" . "=======| FLIP |===============================================================" . "<br>";
+$array = array(
+    "suzuki" => "omni",
+    "Toyota" => "Fortuner",
+    "Audi" => "R8",
+    "Nissan" => "GTR",
+
+);
+array_flip($array);
+$array = array_flip($array);
+print_r($array);
 
 
+echo "<br>" . "=======| SHIFT |===============================================================" . "<br>";
+$array = array(
+    "suzuki" => "omni",
+    "Toyota" => "Fortuner",
+    "Audi" => "R8",
+    "Nissan" => "GTR",
+
+);
+array_shift($array);
+$array = array_shift($array);
+print_r($array);
+
+echo "<br>" . "=======| SLICE |===============================================================" . "<br>";
+$array = array(
+    "0"=>"bmw",
+    "suzuki" => "omni",
+    "Toyota" => "Fortuner",
+    "Audi" => "R8",
+    "Nissan" => "GTR",
+
+);
+$array = array_slice($array,1,2);
+print_r($array);
+echo"<br>";
+$array = array_slice($array,-1,1);
+print_r($array);
 ?>
