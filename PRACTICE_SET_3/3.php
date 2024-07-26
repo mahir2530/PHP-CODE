@@ -7,51 +7,45 @@
     <form method="POST">
         <h2>Bank Account</h2>
         Enter account number: <input type="text" name="accountNumber" required><br>
-        Enter initial balance: <input type="number" name="balance" required><br>
+        Enter amount: <input type="number" name="amt" required><br>
+        Choose Operation<br>
+        <select>
+            <option>Deposit</option>
+            <option>Withdrawl</option>
+        </select>
         <input type="radio" name="transaction" value="deposit" required> Deposit <br>
-        <input type="radio" name="transaction" value="withdraw" required> Withdraw <br>
-        <input type="submit" name="submitTransaction" value="Submit">
+        <input type="radio" name="transaction" value="withdraw" required> Withdrawl <br>
+        <input type="submit" name="submit" value="submit">
     </form>
 
     <?php
-    class BankAccount {
-        public $accountNumber;
-        public $balance;
+    if (isset($_POST['submit'])) {
+        
+        $ac_no=$_POST['accountNumber'];
+        $amt=$_POST['amt'];
+        $tra=$_POST['transaction'];
+        $bal=10000;
 
-        public function __construct($accountNumber, $balance) {
-            $this->accountNumber = $accountNumber;
-            $this->balance = $balance;
+        class Bank{
+
+            function deposit($bal,$amt){
+                $bal+=$amt;
+                echo "Balance after Deposit is:$bal";
+            }
+
+            function withdraw($bal,$amt){
+                $bal-=$amt;
+                echo "Balance after Withdrawl is:$bal";
+            }
         }
 
-        public function deposit($amount) {
-            $this->balance += $amount;
+        $obj=new Bank();
+
+        if ($tra=='deposit') {
+            $obj->deposit($bal,$amt);
         }
-
-        public function withdraw($amount) { 
-                $this->balance -= $amount;
-        }
-
-        public function display() {
-            echo "Account Number: " . $this->accountNumber . "<br>";
-            echo "Balance: " . $this->balance . "<br>";
-        }
-    }
-
-    if (isset($_POST['submitTransaction'])) {
-        $accountNumber = $_POST['accountNumber'];
-        $balance = $_POST['balance'];
-        $transaction = $_POST['transaction'];
-
-        $bankAccount = new BankAccount($accountNumber, $balance);
-
-        if ($transaction == "deposit") {
-            $bankAccount->deposit(2000);
-        } elseif ($transaction == "withdraw") {
-            $bankAccount->withdraw(2000);
-        }
-
-        echo "<h2>Updated Account Details</h2>";
-        $bankAccount->display();
+        else
+            $obj->withdraw($bal,$amt);
     }
     ?>
 </body>
