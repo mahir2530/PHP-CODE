@@ -8,9 +8,12 @@
 <body>
     <h4>Switch case</h4>
     <form method="POST">
-        Enter a number(1 to 4):<input type="text" name="ch">
-        <input type="text" name="num">
-        <input type="submit" value="click">
+        <h4>1.square</h4>
+        <h4>2.Factorial</h4>
+        <h4>3.squareroot</h4>
+        Enter a choice (1 to 4): <input type="text" name="ch"><br>
+        Enter a number:<input type="text" name="num">
+        <input type="submit" name="submit" value="click"><br><br>
     </form>
     <?php
     if (isset($_POST['submit'])) {
