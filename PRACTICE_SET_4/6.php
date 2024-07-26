@@ -1,10 +1,8 @@
 <?php
+$color = array(4 => 'white', 6 => 'green', 11 => 'red');
 
-$color = array(6 => 'green', 11 => 'red',4 => 'white');
+$keys = array_keys($color);
+$Key = $keys[0];
+$Value = $color[$Key];
 
-$firstValue = reset($color); 
-$firstKey = key($color); 
-
-echo "The first element is: $firstValue";
-
-?>
+echo "The first element is: $Value";
