@@ -5,7 +5,7 @@
 </head>
 <body>
 <table width="60%" align="center"  cellpadding="20" cellspacing="10" style="font-family: sans-serif; height: 95vh;">
-	<form action="full_form_action.php" method="POST">
+	<form action="5_(PHP).php" method="POST">
 		<tr>
 			<td colspan="2" bgcolor="gray" style="color:white;"><b>Testform</b></td>
 		</tr>
