@@ -1,30 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Calculator</title>
+    <title></title>
 </head>
+
 <body>
-    <form method="post">
-        <label for="choice">Choose an operation:</label>
-        <select name="choice" id="choice">
-            <option value="1">Square</option>
-            <option value="2">Factorial</option>
-            <option value="3">Square Root</option>
-        </select><br>
-
-        <label for="number">Enter a number:</label>
-        <input type="number" name="number" id="number"><br>
-
-        <input type="submit" value="Calculate">
+    <h4>Switch case</h4>
+    <form method="POST">
+        Enter a number(1 to 4):<input type="text" name="ch">
+        <input type="text" name="num">
+        <input type="submit" value="click">
     </form>
-
     <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $choice = intval($_POST["choice"]);
-        $num = intval($_POST["number"]);
-
-        switch ($choice) {
-            case 1:
+    if (isset($_POST['submit'])) {
+        $ch = $_POST['ch'];
+        $num = $_POST['num'];
+        switch ($ch) {
+           case 1:
                 $result = $num * $num;
                 echo "Square of $num is $result";
                 break;
@@ -41,8 +34,10 @@
                 break;
             default:
                 echo "Invalid choice";
+                break;
         }
     }
     ?>
 </body>
+
 </html>
