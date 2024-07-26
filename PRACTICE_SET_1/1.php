@@ -1,5 +1,5 @@
 <?php
-$character = str(input("enter vowels :);
+$character = 'a'; // Replace with the character you want to check
 
 $vowels = ['a', 'e', 'i', 'o', 'u'];
 
