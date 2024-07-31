@@ -90,8 +90,8 @@ $array = array(
 
 );
 array_shift($array);
-$array = array_shift($array);
-print_r($array);
+$array1 = array_shift($array);
+print_r($array1);
 
 echo "<br>" . "=======| SLICE |===============================================================" . "<br>";
 $array = array(
@@ -107,4 +107,13 @@ print_r($array);
 echo"<br>";
 $array = array_slice($array,-1,1);
 print_r($array);
+
+echo "<br>" . "=======| SPLICE |===============================================================" . "<br>";
+echo "Before splice : <br>";
+$array = array("a", "b", "c", "d", "e");
+print_r($array);
+array_splice($array, 2, 1, array("x", "y")); // Remove 1 element starting from index 2 and insert "x" and "y"
+echo "<br>" . "After splice : <br>";
+print_r($array);
+// Outputs: Array ( [0] => a [1] => b [2] => x [3] => y [4] => d [5] => e )
 ?>
