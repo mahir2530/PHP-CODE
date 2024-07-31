@@ -14,11 +14,11 @@ and print the data accordingly. -->
 <body>
     <h1>PHP Functions</h1>
     <form action="" method="post">
-        <button type="submit" name="sort" value="asc">Sort Ascending</button>
-        <button type="submit" name="sort" value="desc">Sort Descending</button>
-        <input type="text" name="search_value" placeholder="Enter value to search">
-        <button type="submit" name="search">Search</button>
-        <button type="submit" name="sum">Sum</button>
+        <button type="submit" name="sort" value="asc">Sort Ascending</button><br>
+        <button type="submit" name="sort" value="desc">Sort Descending</button><br>
+        <input type="text" name="search_value" placeholder="Enter value to search"><br>
+        <button type="submit" name="search">Search</button><br>
+        <button type="submit" name="sum">Sum</button><br>
         <button type="submit" name="merge">Merge</button>
     </form>
 
@@ -36,9 +36,18 @@ and print the data accordingly. -->
     function sortData($order = 'asc')
     {
         $data = [5, 3, 8, 4, 2];
-        if ($order == 'asc') {
+        print_r($data);
+
+        echo"<br>";
+        if ($order == 'asc') 
+        {
+            echo"sort";
+            echo"<br>";
             sort($data);
-        } else {
+        } else
+         {
+            echo"reversed sort";
+            echo"<br>";
             rsort($data);
         }
         print_r($data);
@@ -47,34 +56,47 @@ and print the data accordingly. -->
     function searchData()
     {
         $data = [5, 3, 8, 4, 2];
+        echo "DATA : ";
+        echo"<br>";
+        print_r($data);
+
         if (isset($_POST['search_value']) && !empty($_POST['search_value'])) {
             $searchValue = $_POST['search_value'];
             $result = array_search($searchValue, $data);
             if ($result !== false) {
-                echo "Value " . $searchValue . " found at index " . $result;
+                echo "<br>"."Value " . $searchValue . " found at index " . $result;
+
             } else {
-                echo "Value " . $searchValue . " not found in the array.";
+                echo "<br>"."Value " . $searchValue . " not found in the array.";
             }
-        } else {
-            echo "Please enter a value to search.";
-        }
+        } 
     }
 
     function sumData()
     {
         $data = [5, 3, 8, 4, 2];
+        print_r($data);
+        echo"<br>";
         $sum = array_sum($data);
         echo "Sum of the array: " . $sum;
     }
 
     function mergeData()
-    {
-        $data1 = [1, 3, 5];
-        $data2 = [2, 4, 6];
-        $mergedData = array_merge($data1, $data2);
-        sort($mergedData);
-        print_r($mergedData);
-    }
+{
+    $data1 = [1, 3, 5];
+    $data2 = [2, 4, 6];
+    echo "Data 1: ";
+    print_r($data1);
+    echo "<br>";
+    echo "Data 2: ";
+    print_r($data2);
+    echo"<br>";
+    $mergedData = array_merge($data1, $data2);
+    sort($mergedData);
+    echo "Merged Data: ";
+
+    print_r($mergedData);
+}
     ?>
 </body>
 </html>
