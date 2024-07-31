@@ -1,38 +1,22 @@
 <?php
-$color=array('red','black','white','blue');
-print"<pre>";
-print_r ($color);
-print"<pre>";
-$number=array(
-    'cow'=>1 ,'lion'=>5,'tiger'=>3,'dog'=>2 );
-    print "<pre>";
-    print_r ($number);
-    print "<pre>";
+print "<pre>";
 
-    echo"simple sort";
-    sort($number);
-    print_r ($number);
+$n = array('cow' => 1, 'lion' => 5, 'tiger' => 3, 'dog' => 2);
+echo "Original array:\n";
+print_r($n);
 
-    echo"Reversed sort";
-    rsort($number);
-    print_r ($number);
+echo "\nAsort (associative sort):\n";
+asort($n);
+print_r($n);
 
-    echo"assosiative order sorting";
-    asort($number);
-    print_r ($number);
+echo "\nArsort (associative reverse sort):\n";
+arsort($n);
+print_r($n);
 
-    echo"assosiative descending order sorting";
-    arsort($number);
-    print_r ($number);
+echo "\nKsort (key sort):\n";
+ksort($n);
+print_r($n);
 
-    echo "ksort = keywise sorting";
-    ksort($number);
-    print_r ($number);
-
-    echo"krsort = keywise descending order sorting";
-    krsort($number);
-    print_r($number);
-
-    
-
-?>
+echo "\nKrsort (key reverse sort):\n";
+krsort($n);
+print_r($n);
