@@ -4,33 +4,77 @@
 • sum
 • merge
 and print the data accordingly. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Functions</title>
+</head>
+<body>
+    <h1>PHP Functions</h1>
+    <form action="" method="post">
+        <button type="submit" name="sort" value="asc">Sort Ascending</button>
+        <button type="submit" name="sort" value="desc">Sort Descending</button>
+        <input type="text" name="search_value" placeholder="Enter value to search">
+        <button type="submit" name="search">Search</button>
+        <button type="submit" name="sum">Sum</button>
+        <button type="submit" name="merge">Merge</button>
+    </form>
 
-<?php
-echo "<br>" . "=======| SORT |===========================================================" . "<br>";
-$array = array(4, 2, 8, 6);
-sort($array);
-print_r($array); // Outputs: Array ( [0] => 2 [1] => 4 [2] => 6 [3] => 8 )
+    <?php
+    if (isset($_POST['sort'])) {
+        sortData($_POST['sort']);
+    } elseif (isset($_POST['search'])) {
+        searchData();
+    } elseif (isset($_POST['sum'])) {
+        sumData();
+    } elseif (isset($_POST['merge'])) {
+        mergeData();
+    }
 
-echo "<br>" . "=======| SEARCH |===========================================================" . "<br>";
-$fruits = array("apple", "banana", "cherry");
-$key = array_search("banana", $fruits);
+    function sortData($order = 'asc')
+    {
+        $data = [5, 3, 8, 4, 2];
+        if ($order == 'asc') {
+            sort($data);
+        } else {
+            rsort($data);
+        }
+        print_r($data);
+    }
 
-if ($key !== false) {
-    echo "Banana found at key: $key";
-} else {
-    echo "Banana not found.";
-}
+    function searchData()
+    {
+        $data = [5, 3, 8, 4, 2];
+        if (isset($_POST['search_value']) && !empty($_POST['search_value'])) {
+            $searchValue = $_POST['search_value'];
+            $result = array_search($searchValue, $data);
+            if ($result !== false) {
+                echo "Value " . $searchValue . " found at index " . $result;
+            } else {
+                echo "Value " . $searchValue . " not found in the array.";
+            }
+        } else {
+            echo "Please enter a value to search.";
+        }
+    }
 
-echo "<br>" . "=======| SUM |=====================================================================" . "<br>";
-$array = array(1, 2, 3, 4, 5);
-$sum = array_sum($array);
-echo "Sum: " . $sum; // Outputs: Sum: 15
+    function sumData()
+    {
+        $data = [5, 3, 8, 4, 2];
+        $sum = array_sum($data);
+        echo "Sum of the array: " . $sum;
+    }
 
-echo "<br>" . "=======| MERGE |===========================================================" . "<br>";
-$array1 = array("red", "green");
-$array2 = array("blue", "yellow");
-$result = array_merge($array1, $array2);
-print_r($result); // Outputs: Array ( [0] => red [1] => green [2] => blue [3] => yellow )
-
-
-?>
+    function mergeData()
+    {
+        $data1 = [1, 3, 5];
+        $data2 = [2, 4, 6];
+        $mergedData = array_merge($data1, $data2);
+        sort($mergedData);
+        print_r($mergedData);
+    }
+    ?>
+</body>
+</html>
