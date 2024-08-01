@@ -1,42 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
-</head>
-<body>
-    
+<html>
 
-    <form action="sign.php" method="post">
-        <table>
+<head>
+    <title>Registration Form</title>
+</head>
+
+<body>
+    <form action="6(php).php" method="POST">
+        <table border="2" align="center">
             <tr>
-                <td>Full Name:</td>
-                <td><input type="text" name="fullname" required></td>
+                <td>Full Name</td>
+                <td><input name="fullname" type="text" value="John Cena"></td>
             </tr>
             <tr>
-                <td>Email:</td>
-                <td><input type="email" name="email" required></td>
+                <td>Email</td>
+                <td><input name="email" type="text" value="john.cena@krazytech.cc"></td>
             </tr>
             <tr>
-                <td>Username:</td>
-                <td><input type="text" name="username" required></td>
+                <td>Username</td>
+                <td><input name="username" type="text" value="john"></td>
             </tr>
             <tr>
-                <td>Password:</td>
-                <td><input type="password" name="password" required></td>
+                <td>Password</td>
+                <td><input name="password" type="password" value="********"></td>
             </tr>
             <tr>
-                <td>Confirm Password:</td>
-                <td><input type="password" name="confirm_password" required></td>
+                <td>Confirm Password</td>
+                <td><input name="confirm password" type="password" value="********"></td>
             </tr>
             <tr>
-                <td colspan="2">
-                    <button type="submit" name="register">Register</button>
-                    <button type="reset">Reset</button>
+                <td>
+                <td colspan="2" bgcolor="green" align="center">
+                    <input name="Register" type="submit" value="Register">
+                    <input name="reset" type="submit" value="Reset">
+                </td>
                 </td>
             </tr>
         </table>
     </form>
 </body>
+
 </html>
