@@ -12,7 +12,7 @@
     <input type="submit" value="Submit">
 </form>
 <?php
-// Define the Fruits class
+
 class name {
     public $name;
     
