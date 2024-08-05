@@ -9,10 +9,6 @@
         Enter account number: <input type="text" name="accountNumber" required><br>
         Enter amount: <input type="number" name="amt" required><br>
         Choose Operation<br>
-        <select>
-            <option>Deposit</option>
-            <option>Withdrawl</option>
-        </select>
         <input type="radio" name="transaction" value="deposit" required> Deposit <br>
         <input type="radio" name="transaction" value="withdraw" required> Withdrawl <br>
         <input type="submit" name="submit" value="submit">
