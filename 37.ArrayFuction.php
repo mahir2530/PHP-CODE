@@ -64,8 +64,6 @@ print_r($array);
 
 echo "<br>" . "=======| UNIQUE |===============================================================" . "<br>";
 $array = array(1, 2, 3, 4, 5, 5);
-shuffle($array);
-$array = array_unique($array);
 print_r($array);
 
 echo "<br>" . "=======| FLIP |===============================================================" . "<br>";
@@ -77,7 +75,6 @@ $array = array(
 
 );
 array_flip($array);
-$array = array_flip($array);
 print_r($array);
 
 
@@ -90,7 +87,6 @@ $array = array(
 
 );
 array_shift($array);
-$array1 = array_shift($array);
 print_r($array1);
 
 echo "<br>" . "=======| SLICE |===============================================================" . "<br>";
