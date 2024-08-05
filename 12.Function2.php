@@ -28,18 +28,19 @@ class Student {
 
 $student = new Student();
 
-// Get student name from POST (if submitted) and sanitize (optional)
 if (isset($_POST['submit'])) {
-  $student_name = isset($_POST['student_name']) ? htmlspecialchars($_POST['student_name']) : '';
-  if (!empty($student_name)) {
-    $student->set_name($student_name);
+        $student_name = $_POST['student_name'];
+    if (!empty($student_name)) {
+        $student->set_name($student_name);
 
-    echo "<h2>Student:</h2>";
-    echo "<p>Name: " . $student->get_name() . "</p>";
-  } else {
-    echo "<p>Please enter a name.</p>";
-  }
+        echo "<h2>Student:</h2>";
+        echo "<p>Name: " . $student->get_name() . "</p>";
+    } else {
+        echo "<p>Please enter a name.</p>";
+    }
 }
+?>
+
 ?>
 
 
