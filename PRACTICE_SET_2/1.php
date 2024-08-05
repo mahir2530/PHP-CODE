@@ -7,9 +7,20 @@
 
 <body>
     <form method="POST">
-        Enter SR No : <input type="text" name="sr">
-        Enter Name : <input type="text" name="name">
-        Enter Email : <input type="text" name="email">
+        <h1>Detail 1</h1>
+        Enter SR No : <input type="text" name="sr[]">
+        Enter Name : <input type="text" name="name[]">
+        Enter Email : <input type="text" name="email[]">
+
+        <h1>Detail 2</h1>
+        Enter SR No : <input type="text" name="sr[]">
+        Enter Name : <input type="text" name="name[]">
+        Enter Email : <input type="text" name="email[]">
+
+        <h1>Detail 3</h1>
+        Enter SR No : <input type="text" name="sr[]">
+        Enter Name : <input type="text" name="name[]">
+        Enter Email : <input type="text" name="email[]">
         <input type="submit" name="submit" value="click">
     </form>
 
@@ -25,15 +36,16 @@
             <th>NAME</th>
             <th>EMAIL</th>
         </tr>";
-        for ($i = 1; $i <= 3; $i++) {
-         echo "<tr>
-        <td>$SR</td>
-        <td>$NAME</td>
-        <td>$EMAIL</td>
-    </tr>";
+
+        for ($i = 0; $i < count($SR); $i++) {
+            echo "<tr>
+                <td>".$SR[$i]."</td>
+                <td>".$NAME[$i]."</td>
+                <td>".$EMAIL[$i]."</td>
+            </tr>";
         }
 
-        "</table> ";
+        echo "</table>";
     }
     ?>
 </body>
