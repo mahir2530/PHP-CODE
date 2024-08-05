@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fruit Details</title>
+    <title>Details</title>
 </head>
 <body>
 <form method="post" >
@@ -29,17 +29,18 @@ class name {
 }
 
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if (isset($_POST["submit"])) {
    
     $fruit_name = $_POST['name'];
 
     $obj = new name($fruit_name);
     
-    echo "<h2>Fruit Details</h2>";
+    echo "<h2>Details</h2>";
     echo "<p>The  name  is : " . $obj->get_name() . "</p>";
    
 }
 ?>
+
 
 
 </body>
