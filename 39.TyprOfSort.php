@@ -9,7 +9,7 @@ echo "\nNormal sort:\n";
 sort($n);
 print_r($n);
 
-echo "\nReverseNormal sort:\n";
+echo "\nReverse Normal sort:\n";
 rsort($n);
 print_r($n);
 
