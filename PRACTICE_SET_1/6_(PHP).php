@@ -1,11 +1,11 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['Register'])) {
 
-    $fullname = trim($_POST['fullname']);
-    $email = trim($_POST['email']);
-    $username = trim($_POST['username']);
-    $password = trim($_POST['password']);
-    $confirmPassword = trim($_POST['confirm_password']);
+    $fullname = ($_POST['fullname']);
+    $email = ($_POST['email']);
+    $username = ($_POST['username']);
+    $password = ($_POST['password']);
+    $confirmPassword = ($_POST['confirm_password']);
 
     if (empty($fullname) || empty($email) || empty($username) || empty($password) || empty($confirmPassword)) {
         echo "Please fill in all fields.";
