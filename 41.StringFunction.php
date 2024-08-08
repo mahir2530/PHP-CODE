@@ -51,4 +51,9 @@ echo "Uppercase first letter of each word: " . $ucwordsStr . "<br>"; // Outputs:
 // 12. ucfirst
 $ucfirstStr = ucfirst($str);
 echo "Uppercase first letter of string: " . $ucfirstStr . "<br>"; // Outputs: Uppercase first letter of string: Hello, world!
+
+// 13. str_repeat
+$repeatedStr str_repeat("hello ", 3);
+echo "Repeated string: " . $repeatedStr . "<br>"; // Outputs: Repeated string: hello hello hello 
+
 ?>
