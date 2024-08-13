@@ -17,18 +17,12 @@ echo "Timestamp for August 1, 2024, 12:00:00: " . $timestamp . "<br>"; // Exampl
 $nextMonday = strtotime("next Monday");
 echo "Next Monday's Date: " . date("Y-m-d", $nextMonday) . "<br>"; // Example: 2024-08-05
 
-// 5. getdate() - Returns an associative array containing the date and time information
-$dateInfo = getdate();
-echo "Current Date Info: <br>";
-print_r($dateInfo);
-
-
-// 7. date_timezone_set() - Sets the time zone for the DateTime object
+// 5. date_timezone_set() - Sets the time zone for the DateTime object
 $dateTime = new DateTime(); // Create a new DateTime object
 date_timezone_set($dateTime, timezone_open("Europe/London")); // Set timezone to London
 echo "DateTime in London Time Zone: " . date_format($dateTime, "Y-m-d H:i:s") . "<br>"; // Example: 2024-08-01 19:05:09
 
-// 8. date_default_timezone_set() - Sets the default timezone used by all date/time functions in a script
+// 6. date_default_timezone_set() - Sets the default timezone used by all date/time functions in a script
 date_default_timezone_set("Asia/Kolkata");
 echo "Current Date and Time in Asia/Kolkata: " . date("Y-m-d H:i:s") . "<br>"; // Example: 2024-08-01 14:05:09
 
